@@ -5,6 +5,11 @@ class Api::ProductsController < ApplicationController
     render "products.json.jb"
   end
 
+  def tomato_seeds
+    @tomato_seeds = Product.find_by(name: "tomato seeds")
+    render "tomato_seeds.json.jb"
+  end
+
 end
 
 
