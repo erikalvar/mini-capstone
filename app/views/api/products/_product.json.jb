@@ -5,7 +5,8 @@
   discounted: product.is_discounted?,
   tax: product.tax,
   total: product.total,
-  image_url: product.image_url,
+  # images: product.images.all{:url},
   description: product.description,
+  supplier: product.supplier.name,
   in_stock: product.in_stock
 }

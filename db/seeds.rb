@@ -21,3 +21,21 @@
 #   description: "30 seeds; heirloom."
 # )
 # product.save
+
+# Supplier.create!([
+#   {
+#     name: "Happy Plants",
+#     email: "hp@gmail.com",
+#     phone_number: "333-4444"
+#   },
+#   {
+#     name: "Home Depot",
+#     email: "homedepot@gmail.com",
+#     phone_number: "333-6767"
+#   },
+#   {
+#     name: "Lowe's",
+#     email: "lowes@gmail.com",
+#     phone_number: "987-9876"
+#   }
+# ])

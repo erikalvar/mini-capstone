@@ -1,7 +1,20 @@
 class Api::ProductsController < ApplicationController
 
   def index
-    @products = Product.all
+    @products = Product.all 
+    if params[:name]
+      @products = Product.where("name iLike ?", "#{params[:name]}")
+    end
+    if params[:discount] == "yes"
+      @products = Product.where("price < ?", 10.0)
+    end
+    if params[:sort] == "lowest_to_highest"
+      @products = Product.order(:price)
+    end
+    if params[:sort] == "highest_to_lowest"
+      @products = Product.order(price: :desc)
+    end
+    #@products = @products.order(:id)
     render "index.json.jb"
   end
 
