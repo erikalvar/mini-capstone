@@ -9,4 +9,5 @@
   description: product.description,
   supplier: product.supplier.name,
   in_stock: product.in_stock
+  # current_user: current_user
 }

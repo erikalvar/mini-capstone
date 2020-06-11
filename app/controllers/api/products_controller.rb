@@ -1,5 +1,7 @@
 class Api::ProductsController < ApplicationController
 
+  before_action :authenticate_admin, except: [:index, :show]
+
   def index
     @products = Product.all 
     if params[:name]
@@ -27,9 +29,9 @@ class Api::ProductsController < ApplicationController
     @product = Product.new(
       name: params[:name],
       price: params[:price],
-      image_url: params[:image_url],
       description: params[:description],
-      in_stock: params[:in_stock]
+      in_stock: params[:in_stock],
+      supplier_id: params[:supplier_id]
     )
     if @product.save #happy path
       render "show.json.jb"   
@@ -42,7 +44,6 @@ class Api::ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @product.name = params[:name] || @product.name
     @product.price = params[:price] || @product.price
-    @product.image_url = params[:image_url] || @product.image_url
     @product.description = params[:description] || @product.description
     @product.in_stock = params[:in_stock] || @product.in_stock
     if @product.save
