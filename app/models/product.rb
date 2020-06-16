@@ -6,8 +6,10 @@ class Product < ApplicationRecord
   validates :in_stock, presence: true
 
   belongs_to :supplier
-  has_many :orders
+  has_many :carted_products
   has_many :product_categories
+  has_many :categories, through: :product_categories
+
   has_many :images
 
   def is_discounted?
@@ -20,6 +22,10 @@ class Product < ApplicationRecord
 
   def total
     price + tax
+  end
+
+  def category_names
+    categories.map { |category| category.name }
   end
 
 end
