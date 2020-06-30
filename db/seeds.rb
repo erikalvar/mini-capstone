@@ -8,6 +8,12 @@ User.create!([
   {name: "Erik", email: "ea@gmail.com", password_digest: "$2a$12$fYgQKjo4IxK5pLytiEGzm.fZU2l2cR4pjeiRHDWo1BoW/gh6FwAmW", admin: true}
 ])
 
+Supplier.create!([
+  {name: "Happy Plants", email: "hp@gmail.com", phone_number: "333-4444"},
+  {name: "Home Depot", email: "homedepot@gmail.com", phone_number: "333-6767"},
+  {name: "Lowe's", email: "lowes@gmail.com", phone_number: "987-9876"}
+])
+
 Product.create!([
   {name: "red bell pepper seeds", price: "5.0", description: "30 seeds; heirloom.", in_stock: true, supplier_id: 1},
   {name: "tomato seeds", price: "2.0", description: "40 pack", in_stock: true, supplier_id: 1},
@@ -35,11 +41,7 @@ Category.create!([
   {name: "seeds"},
   {name: "fertilizers"}
 ])
-Supplier.create!([
-  {name: "Happy Plants", email: "hp@gmail.com", phone_number: "333-4444"},
-  {name: "Home Depot", email: "homedepot@gmail.com", phone_number: "333-6767"},
-  {name: "Lowe's", email: "lowes@gmail.com", phone_number: "987-9876"}
-])
+
 CartedProduct.create!([
   {user_id: 1, product_id: 1, quantity: 4, status: "purchased", order_id: 3},
   {user_id: 1, product_id: 1, quantity: 4, status: "purchased", order_id: 3},
