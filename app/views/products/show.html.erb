@@ -1,0 +1,14 @@
+<h1><%= @product.name%></h1>
+  <h5>Product id: <%= @product.id %></h5>
+  <h5>Descritpion: <%= @product.description %></h5>
+  <h5>Price: <%= @product.price %></h5>
+  <h5>In stock: <%= @product.in_stock %></h5>
+  <h5>Supplier id: <%= @product.supplier_id %></h5>
+
+  <a href="http://localhost:3000/products/<%=@product.id%>/edit">Edit</a>
+
+
+<form action="/products/<%=@product.id%>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button type="submit">Delete</button>
+</form>

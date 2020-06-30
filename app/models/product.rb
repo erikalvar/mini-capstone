@@ -1,9 +1,9 @@
 class Product < ApplicationRecord
 
   validates :name, length: {in: 1..100}, uniqueness: true
-  validates :price, numericality: {greater_than: 0}
-  validates :description, length: {in: 10..500}
-  validates :in_stock, presence: true
+  # validates :price, numericality: {greater_than: 0}
+  # validates :description, length: {in: 10..500}
+  # validates :in_stock, presence: true
 
   belongs_to :supplier
   has_many :carted_products
